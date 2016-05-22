@@ -19,6 +19,7 @@ var paths = {
   toCopy: ['client/index.html'],
   html: ['client/index.html', 'client/app/**/*.html'],
   dest: 'dist',
+  prodDest: '../php-client/',
   blankTemplates: 'templates/component/*.**'
 };
 
@@ -38,6 +39,13 @@ gulp.task('build', ['todo'], function() {
     .pipe(webpack(require('./webpack.config')))
     .pipe(gulp.dest(paths.dest));
 });
+
+gulp.task('buildProd', ['todo'], function() {
+  return gulp.src(paths.entry)
+    .pipe(webpack(require('./webpack.config')))
+    .pipe(gulp.dest(paths.prodDest));
+});
+
 
 gulp.task('serve', function() {
   browser({
