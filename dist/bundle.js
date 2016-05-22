@@ -56191,8 +56191,8 @@
 	  value: true
 	});
 	var api = {
-	  url: 'http://localhost:3000/api',
-	  root: 'http://localhost:3000'
+	  url: 'https://afternoon-ravine-78099.herokuapp.com/api',
+	  root: 'https://afternoon-ravine-78099.herokuapp.com'
 	};
 	exports.api = api;
 
