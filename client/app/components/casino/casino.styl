@@ -1,0 +1,55 @@
+@import '../../../styles'
+
+.casino
+  position relative
+
+  .hero
+    height 100vh
+    background-color alpha(black, 40%)
+
+    .reels
+      display flex
+      justify-content center
+
+      .reel
+        text-align center
+        font-size 27.5vh
+        display inline-block
+        height 33vh
+        background-color accent-color
+        margin 2vw
+
+    *
+      color white
+    .title
+      center(600px)
+      text-align center
+      h1
+        font-size 3rem
+      h3
+        font-size 2rem
+      *
+        font-weight 300
+
+  .action
+    display flex
+    justify-content center
+
+    .button
+      margin 1vw
+
+    ::-webkit-input-placeholder
+      color lighten(primary-color, 25%)
+
+    :-moz-placeholder
+      color lighten(primary-color, 25%)
+
+    ::-moz-placeholder
+      color lighten(primary-color, 25%)
+
+    :-ms-input-placeholder
+      color lighten(primary-color, 25%)
+
+  .alert-message
+    text-align center
+

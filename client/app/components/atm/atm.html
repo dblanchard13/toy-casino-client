@@ -1,0 +1,26 @@
+<section class="atm">
+  <div class="hero">
+    <div class="title">
+      <h1>Balance: {{ vm.balance }}</h1>
+    </div>
+
+    <div class="err-message" ng-if="vm.showUserError">
+      <h1 class="message">{{ vm.errorMessage }}</h1>
+    </div>
+
+    <div class="action">
+      <button class="button raised" ng-click="vm.withdraw()" ng-if="vm.balance">Withdraw</button>
+
+      <input 
+        type="text" 
+        name="amountToWithdraw" 
+        ng-model="vm.withdrawAmount" 
+        placeholder="Amount to Withdraw" 
+        ng-if="vm.balance" 
+        ng-enter="vm.withdraw()"
+        >
+
+    </div>
+
+  </div>
+</section>

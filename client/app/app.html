@@ -1,0 +1,23 @@
+<div id="app">
+  <header>
+    <nav>
+      <div class="logo">
+        <span ui-sref="home">
+          <a ui-sref="home">dbCasino</a>
+        </span>
+      </div>
+      <div class="links">
+        <a ui-sref="casino">slotMachine</a>
+        <a ui-sref="rules">payoutRules</a>
+
+        <a ui-sref="auth" ng-click="vm.logout()" ng-if="vm.loggedIn()">logout</a>
+        <a ui-sref="auth" ng-if="!vm.loggedIn()">signin</a>
+
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div ui-view></div>
+  </main>
+  <footer></footer>
+</div>

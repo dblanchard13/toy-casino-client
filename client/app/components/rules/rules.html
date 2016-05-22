@@ -1,0 +1,8 @@
+<section class="rules">
+  <div class="hero">
+    <div class="title">
+      <h1>{{ ::vm.greeting }}</h1>
+      <h2 ng-repeat="rule in vm.rules track by $index">{{rule}}</h2>
+    </div>
+  </div>
+</section>
