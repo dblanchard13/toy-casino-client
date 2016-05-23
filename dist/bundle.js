@@ -550,7 +550,7 @@
 /* 9 */
 /***/ function(module, exports) {
 
-	module.exports = "<div id=\"app\">\n  <header>\n    <nav>\n      <div class=\"logo\">\n        <span ui-sref=\"home\">\n          <a ui-sref=\"home\">dbCasino</a>\n        </span>\n      </div>\n      <div class=\"links\">\n        <a ui-sref=\"casino\">slotMachine</a>\n        <a ui-sref=\"rules\">payoutRules</a>\n\n        <a ui-sref=\"auth\" ng-click=\"vm.logout()\" ng-if=\"vm.loggedIn()\">logout</a>\n        <a ui-sref=\"auth\" ng-if=\"!vm.loggedIn()\">signin</a>\n\n      </div>\n    </nav>\n  </header>\n  <main>\n    <div ui-view></div>\n  </main>\n  <footer></footer>\n</div>\n"
+	module.exports = "<div id=\"app\">\n  <header>\n    <nav>\n      <div class=\"logo\">\n        <span ui-sref=\"home\">\n          <a ui-sref=\"home\">dbCasino</a>\n        </span>\n      </div>\n      <div class=\"links\">\n        <a ui-sref=\"casino\">slotMachine</a>\n        <a ui-sref=\"rules\">payoutRules</a>\n        <a href=\"https://github.com/dblanchard13/toy-casino-client\" target=\"_blank\">sourceCode</a>\n        <a ui-sref=\"auth\" ng-click=\"vm.logout()\" ng-if=\"vm.loggedIn()\">logout</a>\n        <a ui-sref=\"auth\" ng-if=\"!vm.loggedIn()\">signin</a>\n\n      </div>\n    </nav>\n  </header>\n  <main>\n    <div ui-view></div>\n  </main>\n  <footer></footer>\n</div>\n"
 
 /***/ },
 /* 10 */
@@ -73826,7 +73826,7 @@
 	    this.message = 'Don\'t have an account?';
 	    this.other = 'signup';
 	    this.credits = {};
-	    this.showUserError = false;
+	    this.showingAlert = false;
 	  }
 	
 	  _createClass(AuthController, [{
@@ -73843,7 +73843,7 @@
 	      this.Auth.signin(credits).then(function () {
 	        _this.$state.go('casino');
 	      })['catch'](function () {
-	        _this.showError();
+	        _this.showAlert();
 	      });
 	    }
 	  }, {
@@ -73854,7 +73854,7 @@
 	      this.Auth.signup(credits).then(function () {
 	        _this2.$state.go('casino');
 	      })['catch'](function (e) {
-	        _this2.showError(e);
+	        _this2.showAlert(e);
 	      });
 	    }
 	  }, {
@@ -73864,15 +73864,15 @@
 	      this.$state.go('home');
 	    }
 	  }, {
-	    key: 'showError',
-	    value: function showError(e) {
+	    key: 'showAlert',
+	    value: function showAlert(e) {
 	      var _this3 = this;
 	
-	      this.showUserError = true;
+	      this.showingAlert = true;
 	      this.errorMessage = 'Nope';
 	      this.credits = {};
 	      this.$timeout(function () {
-	        _this3.showUserError = false;
+	        _this3.showingAlert = false;
 	        _this3.errorMessage = '';
 	      }, 3000);
 	    }
@@ -73902,7 +73902,7 @@
 /* 57 */
 /***/ function(module, exports) {
 
-	module.exports = "<section class=\"auth\">\n  <form class=\"card\" name=\"authform\" novalidate ng-submit=\"vm.send()\">\n    <div class=\"title\">\n      <h3>{{ vm.current }}</h3>\n    </div>\n    <div class=\"inputs\">\n      <textbox bind-to=\"vm.credits.username\" label=\"username\" required></textbox>\n      <textbox bind-to=\"vm.credits.password\" label=\"password\" type=\"password\" required></textbox>\n    </div>\n    <div class=\"buttons\">\n      <button \n        class=\"button raised accent\"\n        ng-disabled=\"authform.$invalid\"\n        >\n        {{ vm.current }}\n      </button>\n    </div>\n  </form>\n\n  <div class=\"action\">\n    <h3>{{ vm.message }}</h3>\n    <button class=\"button raised\" ng-click=\"vm.changeForm()\">{{ vm.other }}</button>\n  </div>\n\n  <div class=\"err-message\" ng-if=\"vm.showUserError\">\n    <h1 class=\"message\">{{ vm.errorMessage }}</h1>\n  </div>\n</section>\n"
+	module.exports = "<section class=\"auth\">\n  <form class=\"card\" name=\"authform\" novalidate ng-submit=\"vm.send()\">\n    <div class=\"title\">\n      <h3>{{ vm.current }}</h3>\n    </div>\n    <div class=\"inputs\">\n      <textbox bind-to=\"vm.credits.username\" label=\"username\" required></textbox>\n      <textbox bind-to=\"vm.credits.password\" label=\"password\" type=\"password\" required></textbox>\n    </div>\n    <div class=\"buttons\">\n      <button \n        class=\"button raised accent\"\n        ng-disabled=\"authform.$invalid\"\n        >\n        {{ vm.current }}\n      </button>\n    </div>\n  </form>\n\n  <div class=\"action\">\n    <h3>{{ vm.message }}</h3>\n    <button class=\"button raised\" ng-click=\"vm.changeForm()\">{{ vm.other }}</button>\n  </div>\n\n  <div class=\"err-message\" ng-if=\"vm.showingAlert\">\n    <h1 class=\"message\">{{ vm.errorMessage }}</h1>\n  </div>\n</section>\n"
 
 /***/ },
 /* 58 */
@@ -74116,11 +74116,11 @@
 	    value: function showAlert(e) {
 	      var _this2 = this;
 	
-	      this.showAlert = true;
+	      this.showingAlert = true;
 	      this.alert = e || 'Nope';
 	      this.credits = {};
 	      this.$timeout(function () {
-	        _this2.showAlert = false;
+	        _this2.showingAlert = false;
 	        _this2.alert = '';
 	      }, 3000);
 	    }
@@ -74139,7 +74139,7 @@
 /* 63 */
 /***/ function(module, exports) {
 
-	module.exports = "<section class=\"casino\">\n  <div class=\"hero\">\n    <div class=\"title\">\n      <h1>Hey There, {{ ::vm.username | capitalize }}</h1>\n      <h3>Coins: {{ vm.coins }}</h3>\n    </div>\n\n    <div class=\"alert-message\" ng-if=\"vm.showAlert\">\n      <h1 class=\"message\">{{ vm.alert }}</h1>\n    </div>\n\n    <div class=\"reels\">\n      <div class=\"reel fx-bounce-normal fx-speed-1000\" ng-hide=\"vm.spinning\">{{vm.reel1}}</div>\n      <div class=\"reel fx-bounce-normal fx-speed-1000\" ng-hide=\"vm.spinning\">{{vm.reel2}}</div>\n      <div class=\"reel fx-bounce-normal fx-speed-1000\" ng-hide=\"vm.spinning\">{{vm.reel3}}</div>\n    </div>\n\n    <div class=\"action\">\n      <button class=\"button raised\" ng-click=\"vm.leverOrAtm()\">{{ vm.buttonText }}</button>\n\n      <input \n        type=\"text\" \n        name=\"amountToBet\" \n        ng-model=\"vm.betAmount\"\n        ng-if=\"vm.coins\"\n        placeholder=\"# of Coins to Bet\" \n        ng-enter=\"vm.pullTheLever()\"\n        >\n\n    </div>\n\n  </div>\n</section>\n"
+	module.exports = "<section class=\"casino\">\n  <div class=\"hero\">\n    <div class=\"title\">\n      <h1>Hey There, {{ ::vm.username | capitalize }}</h1>\n      <h3>Coins: {{ vm.coins }}</h3>\n    </div>\n\n    <div class=\"alert-message\" ng-if=\"vm.showingAlert\">\n      <h1 class=\"message\">{{ vm.alert }}</h1>\n    </div>\n\n    <div class=\"reels\">\n      <div class=\"reel fx-bounce-normal fx-speed-1000\" ng-hide=\"vm.spinning\">{{vm.reel1}}</div>\n      <div class=\"reel fx-bounce-normal fx-speed-1000\" ng-hide=\"vm.spinning\">{{vm.reel2}}</div>\n      <div class=\"reel fx-bounce-normal fx-speed-1000\" ng-hide=\"vm.spinning\">{{vm.reel3}}</div>\n    </div>\n\n    <div class=\"action\">\n      <button class=\"button raised\" ng-click=\"vm.leverOrAtm()\">{{ vm.buttonText }}</button>\n\n      <input \n        type=\"text\" \n        name=\"amountToBet\" \n        ng-model=\"vm.betAmount\"\n        ng-if=\"vm.coins\"\n        placeholder=\"# of Coins to Bet\" \n        ng-enter=\"vm.pullTheLever()\"\n        >\n\n    </div>\n\n  </div>\n</section>\n"
 
 /***/ },
 /* 64 */
@@ -74280,7 +74280,7 @@
 	      var _this = this;
 	
 	      if (this.withdrawAmount > this.balance) {
-	        this.showError('You don\'t have enough in your account for that!');
+	        this.showAlert('You don\'t have enough in your account for that!');
 	        return;
 	      }
 	
@@ -74289,15 +74289,15 @@
 	      });
 	    }
 	  }, {
-	    key: 'showError',
-	    value: function showError(e) {
+	    key: 'showAlert',
+	    value: function showAlert(e) {
 	      var _this2 = this;
 	
-	      this.showUserError = true;
+	      this.showingAlert = true;
 	      this.errorMessage = e || 'Nope';
 	      this.credits = {};
 	      this.$timeout(function () {
-	        _this2.showUserError = false;
+	        _this2.showingAlert = false;
 	        _this2.errorMessage = '';
 	      }, 3000);
 	    }
@@ -74316,7 +74316,7 @@
 /* 69 */
 /***/ function(module, exports) {
 
-	module.exports = "<section class=\"atm\">\n  <div class=\"hero\">\n    <div class=\"title\">\n      <h1>Balance: {{ vm.balance }}</h1>\n    </div>\n\n    <div class=\"err-message\" ng-if=\"vm.showUserError\">\n      <h1 class=\"message\">{{ vm.errorMessage }}</h1>\n    </div>\n\n    <div class=\"action\">\n      <button class=\"button raised\" ng-click=\"vm.withdraw()\" ng-if=\"vm.balance\">Withdraw</button>\n\n      <input \n        type=\"text\" \n        name=\"amountToWithdraw\" \n        ng-model=\"vm.withdrawAmount\" \n        placeholder=\"Amount to Withdraw\" \n        ng-if=\"vm.balance\" \n        ng-enter=\"vm.withdraw()\"\n        >\n\n    </div>\n\n  </div>\n</section>\n"
+	module.exports = "<section class=\"atm\">\n  <div class=\"hero\">\n    <div class=\"title\">\n      <h1>Balance: {{ vm.balance }}</h1>\n    </div>\n\n    <div class=\"err-message\" ng-if=\"vm.showingAlert\">\n      <h1 class=\"message\">{{ vm.errorMessage }}</h1>\n    </div>\n\n    <div class=\"action\">\n      <button class=\"button raised\" ng-click=\"vm.withdraw()\" ng-if=\"vm.balance\">Withdraw</button>\n\n      <input \n        type=\"text\" \n        name=\"amountToWithdraw\" \n        ng-model=\"vm.withdrawAmount\" \n        placeholder=\"Amount to Withdraw\" \n        ng-if=\"vm.balance\" \n        ng-enter=\"vm.withdraw()\"\n        >\n\n    </div>\n\n  </div>\n</section>\n"
 
 /***/ },
 /* 70 */

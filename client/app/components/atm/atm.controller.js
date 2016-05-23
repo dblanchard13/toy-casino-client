@@ -9,7 +9,7 @@ class AtmController {
 
   withdraw(){
     if(this.withdrawAmount > this.balance){
-      this.showError('You don\'t have enough in your account for that!');
+      this.showAlert('You don\'t have enough in your account for that!');
       return;
     }
 
@@ -19,12 +19,12 @@ class AtmController {
       });
   }
 
-  showError(e){
-    this.showUserError = true;
+  showAlert(e){
+    this.showingAlert = true;
     this.errorMessage = e || 'Nope';
     this.credits = {};
     this.$timeout(()=> {
-      this.showUserError = false;
+      this.showingAlert = false;
       this.errorMessage = '';
     }, 3000);
   }

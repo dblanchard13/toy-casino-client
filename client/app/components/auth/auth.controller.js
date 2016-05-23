@@ -9,7 +9,7 @@ class AuthController {
     this.message = 'Don\'t have an account?';
     this.other = 'signup';
     this.credits = {};
-    this.showUserError = false;
+    this.showingAlert = false;
   }
 
   send(){
@@ -23,7 +23,7 @@ class AuthController {
       this.$state.go('casino')
     })
     .catch(()=> {
-      this.showError();
+      this.showAlert();
     })
   }
 
@@ -33,7 +33,7 @@ class AuthController {
       this.$state.go('casino')
     })
     .catch(e => {
-      this.showError(e);
+      this.showAlert(e);
     })
   }
 
@@ -42,12 +42,12 @@ class AuthController {
     this.$state.go('home');
   }
 
-  showError(e){
-    this.showUserError = true;
+  showAlert(e){
+    this.showingAlert = true;
     this.errorMessage = 'Nope';
     this.credits = {};
     this.$timeout(()=> {
-      this.showUserError = false;
+      this.showingAlert = false;
       this.errorMessage = '';
 
     }, 3000);

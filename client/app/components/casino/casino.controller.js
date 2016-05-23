@@ -86,11 +86,11 @@ class CasinoController {
   }
 
   showAlert(e){
-    this.showAlert = true;
+    this.showingAlert = true;
     this.alert = e || 'Nope';
     this.credits = {};
     this.$timeout(() => {
-      this.showAlert = false;
+      this.showingAlert = false;
       this.alert = '';
     }, 3000);
   }
