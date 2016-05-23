@@ -26,7 +26,6 @@ import {auth} from './components/auth/auth';
 import {casino} from './components/casino/casino';
 import {atm} from './components/atm/atm';
 import {rules} from './components/rules/rules';
-import {testing} from './components/testing/testing';
 
 angular.module('app', [
   uiRouter,
@@ -43,7 +42,6 @@ angular.module('app', [
   auth.name,
   casino.name,
   atm.name,
-  rules.name,
-  testing.name
+  rules.name
 ])
 .directive('app', appDirective);
