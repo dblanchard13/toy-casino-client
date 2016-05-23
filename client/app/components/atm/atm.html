@@ -4,10 +4,6 @@
       <h1>Balance: {{ vm.balance }}</h1>
     </div>
 
-    <div class="err-message" ng-if="vm.showingAlert">
-      <h1 class="message">{{ vm.errorMessage }}</h1>
-    </div>
-
     <div class="action">
       <button class="button raised" ng-click="vm.withdraw()" ng-if="vm.balance">Withdraw</button>
 
@@ -20,6 +16,10 @@
         ng-enter="vm.withdraw()"
         >
 
+    </div>
+
+    <div class="err-message" ng-if="vm.showingAlert">
+      <h1 class="message">{{ vm.errorMessage }}</h1>
     </div>
 
   </div>
