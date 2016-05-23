@@ -99,15 +99,13 @@
 	
 	var _componentsRulesRules = __webpack_require__(70);
 	
-	var _componentsTestingTesting = __webpack_require__(76);
-	
 	_angular2['default'].module('app', [_angularUiRouter2['default'], _angularAnimate2['default'], _ngFx2['default'],
 	// home is the module, the angular module
 	// because that's what we exported in home.js
 	// all angular modules have a name
 	// property who's value is the name you set the
 	// module to be
-	_componentsHomeHome.home.name, _componentsCommonCommon.common.name, _sharedShared.shared.name, _componentsAuthAuth.auth.name, _componentsCasinoCasino.casino.name, _componentsAtmAtm.atm.name, _componentsRulesRules.rules.name, _componentsTestingTesting.testing.name]).directive('app', _appDirective.appDirective);
+	_componentsHomeHome.home.name, _componentsCommonCommon.common.name, _sharedShared.shared.name, _componentsAuthAuth.auth.name, _componentsCasinoCasino.casino.name, _componentsAtmAtm.atm.name, _componentsRulesRules.rules.name]).directive('app', _appDirective.appDirective);
 
 /***/ },
 /* 1 */
@@ -494,7 +492,7 @@
 
 	exports = module.exports = __webpack_require__(3)();
 	// imports
-	exports.push([module.id, "@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700);", ""]);
+	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700);", ""]);
 	
 	// module
 	exports.push([module.id, "html,\nbody {\n  height: 100%;\n}\nbody {\n  font-family: 'Roboto', sans-serif;\n  background-color: #efefef;\n}\nbody * {\n  box-sizing: border-box;\n}\na {\n  color: #fff;\n  text-decoration: none;\n}\na:visited {\n  color: #fff;\n}\na:hover,\na:active {\n  text-decoration: none;\n}\n.error-message {\n  position: absolute;\n  top: 100%;\n}\n.error-message .message {\n  color: #1de9b6;\n}\n#app header nav {\n  height: 68px;\n  background-color: #ff5722;\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);\n  z-index: 99999;\n  position: fixed;\n  min-width: 100%;\n  padding: 15px;\n  padding-bottom: 0px;\n}\n#app header nav .logo {\n  *zoom: 1;\n  float: left;\n  clear: none;\n  text-align: inherit;\n  width: 12.5%;\n  margin-left: 0%;\n  margin-right: 0%;\n  color: #fff;\n  font-size: 1.8rem;\n  cursor: pointer;\n}\n#app header nav .logo:before,\n#app header nav .logo:after {\n  content: '';\n  display: table;\n}\n#app header nav .logo:after {\n  clear: both;\n}\n#app header nav .links {\n  *zoom: 1;\n  float: left;\n  clear: none;\n  text-align: inherit;\n  width: 25%;\n  margin-left: 62.5%;\n  margin-right: 0%;\n}\n#app header nav .links:before,\n#app header nav .links:after {\n  content: '';\n  display: table;\n}\n#app header nav .links:after {\n  clear: both;\n}\n#app header nav .links:nth-child(2n) {\n  float: right;\n}\n#app header nav .links:nth-child(2n + 1) {\n  clear: both;\n}\n#app header nav .links * {\n  font-size: 1.3rem;\n  margin-left: 10px;\n}\n#app main {\n  padding-top: 68px;\n}\n.button {\n  outline: none;\n  border: none;\n  border-radius: 2px;\n  background-color: #ff5722;\n  color: #fff;\n  text-transform: uppercase;\n  text-align: center;\n  min-width: 88px;\n  min-height: 36px;\n  overflow: hidden;\n  user-select: none;\n  vertical-align: middle;\n  position: relative;\n  padding: 0px 6px;\n  white-space: nowrap;\n  cursor: pointer;\n  font-weight: 500;\n  user-select: none;\n  font-size: 14px;\n  line-height: 30px;\n}\n.button[disabled],\n.button.disabled,\n.button :disabled {\n  background-color: #fff !important;\n  color: rgba(0,0,0,0.26);\n  box-shadow: none !important;\n}\n.button.accent {\n  background-color: #1de9b6;\n}\n.button.fab {\n  width: 56px;\n  min-width: 0px;\n  background-clip: padding-box;\n  height: 56px;\n  line-height: 56px;\n  z-index: 20;\n  border-radius: 50%;\n}\n.button:active,\n.button:focus {\n  border: none;\n  outline: none;\n}\n.button.raised,\n.button.fab {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  transition: all 0.3s ease;\n}\n.button.raised:active,\n.button.fab:active {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n}\nmain {\n  position: relative;\n  min-height: 400px;\n}\nmain [ui-view].ng-enter {\n  opacity: 0;\n  transform: scale3d(0.5, 0.5, 0.5);\n}\nmain [ui-view].ng-enter-active {\n  opacity: 1;\n  transform: scale3d(1, 1, 1);\n}\nmain [ui-view].ng-leave {\n  opacity: 1;\n  transform: translate3d(0, 0, 0);\n}\nmain [ui-view].ng-leave-active {\n  opacity: 0;\n  transform: translate3d(100px, 0, 0);\n}\nmain [ui-view].ng-enter,\nmain [ui-view].ng-leave {\n  position: absolute;\n  left: 0;\n  right: 0;\n  transition: all 0.5s ease-in-out;\n}\ninput {\n  font-size: 18px;\n  padding: 10px 10px 10px 5px;\n  display: block;\n  color: #ff5722;\n  background: transparent;\n  border: none;\n  border-bottom: 1px solid #11b38b;\n}\ninput:focus {\n  outline: none;\n}\ninput:focus ~ .highlight {\n  animation: inputHighlight 0.3s ease;\n}\ninput:focus ~ .bar:before,\ninput:focus ~ .bar:after {\n  width: 50%;\n}\ninput:focus ~ label,\ninput:valid ~ label {\n  top: -20px;\n  font-size: 14px;\n  color: #34ebbd;\n}\n", ""]);
@@ -74451,182 +74449,6 @@
 /***/ function(module, exports) {
 
 	module.exports = "<section class=\"rules\">\n  <div class=\"hero\">\n    <div class=\"title\">\n      <h1>{{ ::vm.greeting }}</h1>\n      <h2 ng-repeat=\"rule in vm.rules track by $index\">{{rule}}</h2>\n    </div>\n  </div>\n</section>\n"
-
-/***/ },
-/* 76 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	var _testingDirective = __webpack_require__(77);
-	
-	var _angular = __webpack_require__(10);
-	
-	var _angular2 = _interopRequireDefault(_angular);
-	
-	var _angularUiRouter = __webpack_require__(12);
-	
-	var _angularUiRouter2 = _interopRequireDefault(_angularUiRouter);
-	
-	var testing = _angular2['default'].module('testing', [_angularUiRouter2['default']]).config(function ($stateProvider) {
-	  $stateProvider.state('testing', {
-	    url: '/testing',
-	    template: '<testing></testing>'
-	  });
-	}).directive('testing', _testingDirective.testingDirective);
-	exports.testing = testing;
-
-/***/ },
-/* 77 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	__webpack_require__(78);
-	
-	var _testingController = __webpack_require__(80);
-	
-	var _testingHtml = __webpack_require__(81);
-	
-	var _testingHtml2 = _interopRequireDefault(_testingHtml);
-	
-	var testingDirective = function testingDirective() {
-	  return {
-	    controller: _testingController.TestingController,
-	    template: _testingHtml2['default'],
-	    controllerAs: 'vm',
-	    scope: {},
-	    replace: true,
-	    restrict: 'E'
-	  };
-	};
-	exports.testingDirective = testingDirective;
-
-/***/ },
-/* 78 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(79);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/stylus-loader/index.js!./testing.styl", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/stylus-loader/index.js!./testing.styl");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 79 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(3)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".testing {\n  position: relative;\n}\n.testing .hero {\n  height: 200vh;\n  background-color: rgba(0,0,0,0.4);\n}\n.testing .hero * {\n  color: #fff;\n}\n.testing .hero .title {\n  *zoom: 1;\n  width: auto;\n  max-width: 600px;\n  float: none;\n  display: block;\n  margin-right: auto;\n  margin-left: auto;\n  padding-left: 0;\n  padding-right: 0;\n  text-align: center;\n}\n.testing .hero .title:before,\n.testing .hero .title:after {\n  content: '';\n  display: table;\n}\n.testing .hero .title:after {\n  clear: both;\n}\n.testing .hero .title h1 {\n  font-size: 3rem;\n}\n.testing .hero .title h3 {\n  font-size: 2rem;\n}\n.testing .hero .title * {\n  font-weight: 300;\n}\n.testing .hero .items-container {\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  text-align: center;\n}\n.testing .hero .items-container .item {\n  margin: 1vw;\n  width: 10vw;\n  height: 20vh;\n  background-color: #1de9b6;\n  position: relative;\n}\n.testing .hero .items-container .item .item-name {\n  line-height: 19vh;\n  font-size: 2rem;\n}\n.testing .hero .items-container .item .item-delete {\n  position: absolute;\n  left: 5px;\n  top: 5px;\n  cursor: pointer;\n}\n.testing .hero .action {\n  display: flex;\n  justify-content: center;\n}\n.testing .hero .action .button {\n  margin: 1vw;\n}\n.testing .hero .action ::-webkit-input-placeholder {\n  color: #ff8159;\n}\n.testing .hero .action :-moz-placeholder {\n  color: #ff8159;\n}\n.testing .hero .action ::-moz-placeholder {\n  color: #ff8159;\n}\n.testing .hero .action :-ms-input-placeholder {\n  color: #ff8159;\n}\n.testing .hero .alert-message {\n  text-align: center;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 80 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-	
-	var TestingController = (function () {
-	  function TestingController($timeout) {
-	    _classCallCheck(this, TestingController);
-	
-	    this.$timeout = $timeout;
-	    this.greeting = 'TestingController!';
-	    this.items = [{ id: 1, name: 'David' }, { id: 2, name: 'Jack' }, { id: 3, name: 'Nick' }];
-	    this.nextId = 4;
-	  }
-	
-	  _createClass(TestingController, [{
-	    key: 'addItem',
-	    value: function addItem() {
-	      if (!this.itemName) {
-	        this.showAlert('Gotta enter an item name first!');
-	        return;
-	      }
-	
-	      var item = {
-	        id: this.nextId++,
-	        name: this.itemName
-	      };
-	      this.items.push(item);
-	      this.itemName = '';
-	    }
-	  }, {
-	    key: 'removeItem',
-	    value: function removeItem(idx) {
-	      this.items.splice(idx, 1);
-	    }
-	  }, {
-	    key: 'showAlert',
-	    value: function showAlert(e) {
-	      var _this = this;
-	
-	      this.showAlert = true;
-	      this.alert = e || 'Nope';
-	      this.credits = {};
-	      this.$timeout(function () {
-	        _this.showAlert = false;
-	        _this.alert = '';
-	      }, 3000);
-	    }
-	  }]);
-	
-	  return TestingController;
-	})();
-	
-	;
-	
-	TestingController.$inject = ['$timeout'];
-	
-	exports.TestingController = TestingController;
-
-/***/ },
-/* 81 */
-/***/ function(module, exports) {
-
-	module.exports = "<section class=\"testing\">\n  <div class=\"hero\">\n    <div class=\"title\">\n      <h1>\n        Hey from {{ vm.greeting }}\n      </h1>\n    </div>\n\n    <div class=\"alert-message\" ng-if=\"vm.showAlert\">\n      <h1 class=\"message\">\n        {{ vm.alert }}\n      </h1>\n    </div>\n\n    <div class=\"action\">\n      <button class=\"button raised\" ng-click=\"vm.addItem()\">Add</button>\n\n      <input \n        type=\"text\" \n        name=\"item\" \n        ng-model=\"vm.itemName\"\n        placeholder=\"item name\" \n        ng-enter=\"vm.addItem()\"\n        >\n\n    </div>\n\n    <div class=\"items-container\">\n      <div class=\"item\" ng-repeat=\"item in vm.items track by item.id\">\n        <div class=\"item-delete\" ng-click=\"vm.removeItem($index)\">\n          X\n        </div>\n        <div class=\"item-name\">\n          {{ ::item.name }}\n        </div>\n      </div>\n    </div>\n\n  </div>\n</section>\n"
 
 /***/ }
 /******/ ]);
