@@ -24,9 +24,8 @@ var paths = {
 };
 
 // helper function
-var resolveToComponents = function(glob){
-  glob = glob || '';
-  return path.join('client', 'app/components', glob); // app/components/{glob}
+var resolveToComponents = function(){
+  return path.join('client', 'app/components');
 };
 
 gulp.task('todo', function() {
@@ -40,18 +39,25 @@ gulp.task('build', ['todo'], function() {
     .pipe(gulp.dest(paths.dest));
 });
 
-gulp.task('buildProd', ['todo'], function() {
+gulp.task('buildProd', function() {
   return gulp.src(paths.entry)
     .pipe(webpack(require('./webpack.config')))
     .pipe(gulp.dest(paths.prodDest));
 });
 
-
 gulp.task('serve', function() {
+  // By invoking browser-sync immediately instead of using one of its methods, we initiate a singleton object
   browser({
+    // Serves a Borwser Sync specific UI for editing connections/mirroring across devices/etc.
+    ui: {
+      port: 3600
+    },
     port: process.env.PORT || 4500,
-    open: false,
+    // Automatically opens a browser at http://localhost:4500 on server startup
+    open: true,
+    // Stops inputs from being mirrored on other devices
     ghostMode: false,
+    // Gives the path from which to statically serve the app
     server: {
       baseDir: 'dist'
     }
